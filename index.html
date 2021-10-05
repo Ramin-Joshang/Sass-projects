@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="fa">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- main css -->
+    <link rel="stylesheet" href="css/main.min.css">
+    <!-- font awesome -->
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
+
+
+    <title>Sass-project</title>
+
+    <link>
+</head>
+
+<body>
+    <!--  Start Header Section -->
+    <header class="header">
+        <div class="container">
+            <section class="row">
+                <section class="menu">
+                    <!--  Logo -->
+                    <section class="brand">
+                        <span class="logo-title">
+                            <a href="index.html" class="logo"><i class="fas fa-utensils fa-fw"></i></a>
+                            <span class="brand-title">
+                                <h1>رستوران من</h1>
+                            </span>
+                        </span>
+                        <button class="btn-burger" type="button"><i class="fas fa-bars"></i></button>
+                    </section>
+                    <!--  Logo -->
+                    <!--  Navbar -->
+                    <nav class="header-menu-container" id="right-menu">
+                        <span class="menu-close-button">
+                            <i class="fa fa-times"></i>
+                        </span>
+                        <span class="menu-logo-title">
+                            <a href="index.html" class="menu-logo"><i class="fas fa-utensils fa-fw"></i></a>
+                            <span class="menu-brand-title">
+                                <h1>رستوران من</h1>
+                            </span>
+                        </span>
+                        <form class="menu-search">
+                            <input type="search" class="search" placeholder="جستجو ...">
+                            <button title="Search" type="submit" class="search-btn"><i
+                                    class="fa fa-search"></i></button>
+                        </form>
+                        <ul class="header-menu">
+                            <li class="header-menu-item"><span href="#" class="header-menu-item-link active"><i
+                                        class="icon fa fa-home"></i>خانه</a>
+                            </li>
+                            <li class="header-menu-item"><a href="#services" class="header-menu-item-link"><i
+                                        class="icon fa fa-wrench"></i>سرویس ها</a>
+                            </li>
+                            <li class="header-menu-item"><a href="#reserve" class="header-menu-item-link"><i
+                                        class="icon fa fa-hotel"></i>رزرو میز</a></li>
+                            <li class="header-menu-item"><a href="#gallery" class="header-menu-item-link"><i
+                                        class="icon fa fa-image"></i>گالری تصایر</a></li>
+                            <li class="header-menu-item"><a href="#about-us" class="header-menu-item-link"><i
+                                        class="icon fa fa-phone"></i>تماس با ما</a></li>
+                            <li class="header-menu-item"><a href="#contact-us" class="header-menu-item-link"><i
+                                        class="icon fa fa-comment"></i>درباره ما</a></li>
+                        </ul>
+                        <ul class="profile">
+                            <li><i class="icon fa fa-user"></i></li>
+                            <button class="register" id="register">ثبت نام </button>
+                            <button class="login" id="login">ورود</button>
+                        </ul>
+                    </nav>
+                    <!--  Navbar -->
+                </section>
+            </section>
+            <!--  Banner -->
+            <section class="row">
+                <section class="header-banner">
+                    <section class="header-banner-title">
+                        <h1>با سبکی مدرن تر ، غذا های لذیذ ما کجا هستند</h1>
+                        <h1>تجربه غذایی اصیل و ایرانی</h1>
+                    </section>
+                    <section class="header-banner-search">
+                        <input type="text" placeholder="چه غذایی دوست داری؟">
+                        <button><a href="#"><i class="fas fa-search"></i></a></button>
+                    </section>
+                    <!--  Banner -->
+                </section>
+            </section>
+        </div>
+    </header>
+    <!--  End Header Section -->
+    <!--  Register Form -->
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <span class="close-icon pointer" id="closeRegisterModal">
+                <i class="fas fa-times"></i>
+            </span>
+                                <h2>ساخت حساب جدید</h2>
+                                <form class="register">
+                                    <div class="register-input">
+                                        <span class="register-icon"><i class="fa fa-user-circle"></i></span>
+                                        <input type="text" placeholder="نام کاربری">
+                                    </div>
+                                    <div class="register-input">
+                                        <span class="register-icon"><i class="fa fa-envelope"></i></span>
+                                        <input type="email" placeholder="ایمیل">
+                                    </div>
+                                    <div class="register-input">
+                                        <span class="register-icon"><i class="fas fa-key"></i></span>
+                                        <input type="password" id="Rpass" placeholder="رمز عبور">
+                                        <span class="show-pass pointer"><i class="fa fa-eye" onclick="showPass('Rpass',this)"></i></span>
+                                    </div>
+                                    <div class="register-input">
+                                        <span class="register-icon"><i class="fas fa-key"></i></span>
+                                        <input type="password" id="Rcfmpass" placeholder="رمز عبور">
+                                        <span class="show-pass pointer"><i class="fa fa-eye" onclick="showPass('Rcfmpass',this)"></i></span>
+                                    </div>
+                                    <div class="rules-checkbox">
+                                        <input type="checkbox">
+                                        <span>من تمام شرایط و قوانین را قبول دارم.</span>
+                                    </div>
+                                    <input class="btn" type="button" value="ارسال">
+                                </form>
+        </div>
+        </div>
+        <!--  Register Form -->
+        <!--  Login Form -->
+        <div id="loginModal" class="modal">
+            <div class="modal-content">
+                <span class="close-icon pointer" id="closeLoginModal">
+                <i class="fas fa-times"></i>
+            </span>
+                <h2>ورود به حساب</h2>
+                <form class="login">
+                    <div class="login-input">
+                        <span class="login-icon"><i class="fa fa-user-circle"></i></span>
+                        <input type="text" id="contact-input" placeholder="نام کاربری یا ایمیل">
+                    </div>
+                    <div class="login-input">
+                        <span class="register-icon"><i class="fas fa-key"></i></span>
+                        <input type="password" id="Lpass" placeholder="رمز عبور">
+                        <span class="show-pass pointer"><i class="fa fa-eye" onclick="showPass('Lpass',this)"></i></span>
+                    </div>
+                    <input class="btn" type="button" value="ارسال">
+                </form>
+            </div>
+        </div>
+        <!--  Login Form -->
+        <main>
+            <section class="services">
+                <div class="container">
+                    <div class="row">
+                        <h1 class="title" id="services">سرویس های ما</h1>
+                        <section class="services-item-container">
+                            <section class="services-item">
+                                <div class="services-icon pointer">
+                                    <span><i class="fas fa-truck"></i></span>
+                                </div>
+                                <div class="services-item-title">
+                                    <h5>ارسال رایگان</h5>
+                                    <p>سفارش های بالای 50 هزار تومان</p>
+                                </div>
+                            </section>
+                            <section class="services-item">
+                                <div class="services-icon pointer">
+                                    <span><i class="fas fa-hamburger"></i></span>
+                                </div>
+                                <div class="services-item-title">
+                                    <h5>غذایی گرم</h5>
+                                    <p>بسته بندی مناسب</p>
+                                </div>
+                            </section>
+                            <section class="services-item">
+                                <div class="services-icon pointer">
+                                    <span><i class="fas fa-award"></i></span>
+                                </div>
+                                <div class="services-item-title">
+                                    <h5>کیفیت برتر</h5>
+                                    <p>مواد اولیه ی با کیفیت</p>
+                                </div>
+                            </section>
+                            <section class="services-item">
+                                <div class="services-icon pointer">
+                                    <span><i class="fa fa-headset"></i></span>
+                                </div>
+                                <div class="services-item-title">
+                                    <h5>پشتیبانی</h5>
+                                    <p>پشتیبانی 24 ساعته</p>
+                                </div>
+                            </section>
+                        </section>
+                    </div>
+                </div>
+            </section>
+            <section class="line"></section>
+            <section class="book-table">
+                <div class="container">
+                    <div class="row">
+                        <h1 class="title" id="reserve">رزرو میز</h1>
+                        <p class="book-table-text">میز خود را آنلاین رزرو کنید.</p>
+
+                        <form class="reserve-info">
+                            <p class="reserve-info">جهت رزرو میز اطلاعات زیر را وارد نمایید</p>
+                            <section class="info">
+                                <div class="info-input">
+                                    <label for="fname">نام:<sup>*</sup></label>
+                                    <span class="info-icon"><i class="fas fa-user"></i></span>
+                                    <input type="text" placeholder="نام">
+                                </div>
+                                <div class="info-input">
+                                    <label for="fname">نام خانوادگی: <sup>*</sup></label>
+                                    <span class="info-icon"><i class="fas fa-user"></i></span>
+                                    <input type="text" placeholder="نام خانوادگی">
+                                </div>
+                                <div class="info-input">
+                                    <label for="fname">شماره تماس:<sup>*</sup></label>
+                                    <span class="info-icon"><i class="fas fa-user"></i></span>
+                                    <input type="tel" placeholder="شماره تماس">
+                                </div>
+                                <div class="info-input">
+                                    <label for="fname">ایمیل:<sup>*</sup></label>
+                                    <span class="info-icon"><i class="fas fa-user"></i></span>
+                                    <input type="email" placeholder="ایمیل">
+                                </div>
+                                <div class="info-input">
+                                    <label for="fname">تعداد میهمان:<sup>*</sup></label>
+                                    <span class="info-icon"><i class="fas fa-user"></i></span>
+                                    <input type="text" placeholder="تعداد میهمان">
+                                </div>
+                                <div class="info-input">
+                                    <label for="fname">تاریخ:<sup>*</sup></label>
+                                    <span class="info-icon"><i class="fas fa-user"></i></span>
+                                    <input type="date" id="test-date-id" placeholder=" تاریخ ">
+                                </div>
+                                <div class=" info-input ">
+                                    <label for=" fname ">از ساعت:<sup>*</sup></label>
+                                    <span class=" info-icon "><i class=" fas fa-user "></i></span>
+                                    <input type=" time " placeholder=" از ساعت ">
+                                </div>
+                                <div class=" info-input ">
+                                    <label for=" fname ">تا ساعت:<sup>*</sup></label>
+                                    <span class=" info-icon "><i class=" fas fa-user "></i></span>
+                                    <input type=" time " placeholder=" تا ساعت ">
+
+                                </div>
+                                <button class=" btn pointer " type=" button ">ثبت اطلاعات</button>
+
+                            </section>
+                        </form>
+                    </div>
+                </div>
+            </section>
+            <section class="line"></section>
+            <section class="gallery" id="gallery">
+                <div class="container">
+                    <div class="row">
+                        <h1 class="title" id="reserve">گالری تصایر</h1>
+                        <div class="gallery-container">
+                            <!-- Full-width images with number text -->
+                            <div class="mySlides">
+                                <div class="numbertext">1 / 6</div>
+                                <img src="img/7.jpg">
+                            </div>
+
+                            <div class="mySlides">
+                                <div class="numbertext">2 / 6</div>
+                                <img src="img/2.jpg">
+                            </div>
+
+                            <div class="mySlides">
+                                <div class="numbertext">3 / 6</div>
+                                <img src="img/3.jpg">
+                            </div>
+
+                            <div class="mySlides">
+                                <div class="numbertext">4 / 6</div>
+                                <img src="img/4.jpg">
+                            </div>
+
+                            <div class="mySlides">
+                                <div class="numbertext">5 / 6</div>
+                                <img src="img/5.jpg">
+                            </div>
+
+                            <div class="mySlides">
+                                <div class="numbertext">6 / 6</div>
+                                <img src="img/6.jpg">
+                            </div>
+
+                            <!-- Next and previous buttons -->
+                            <a class="prev" onclick="plusSlides(1)">&#10094;</a>
+                            <a class="next" onclick="plusSlides(-1)">&#10095;</a>
+
+
+                            <!-- Thumbnail images -->
+                            <div class="row">
+                                <div class="column">
+                                    <img class="demo cursor" src="img/7.jpg" style="width:100%;height:150px" onclick="currentSlide(1)" alt="The Woods">
+                                </div>
+                                <div class="column">
+                                    <img class="demo cursor" src="img/2.jpg" style="width:100%;height:150px" onclick="currentSlide(2)" alt="Cinque Terre">
+                                </div>
+                                <div class="column">
+                                    <img class="demo cursor" src="img/3.jpg" style="width:100%;height:150px" onclick="currentSlide(3)" alt="Mountains and fjords">
+                                </div>
+                                <div class="column">
+                                    <img class="demo cursor" src="img/4.jpg" style="width:100%;height:150px" onclick="currentSlide(4)" alt="Northern Lights">
+                                </div>
+                                <div class="column">
+                                    <img class="demo cursor" src="img/5.jpg" style="width:100%;height:150px" onclick="currentSlide(5)" alt="Nature and sunrise">
+                                </div>
+                                <div class="column">
+                                    <img class="demo cursor" src="img/6.jpg" style="width:100%;height:150px" onclick="currentSlide(6)" alt="Snowy Mountains">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="about-us" id="about-us">
+                <div class="container">
+                    <div class="row">
+                        <h1 class="title" id="reserve">درباره ما</h1>
+
+                        <section class="our-team">
+                            <!-- <div class="card">
+                                <div class="image">
+                                    <img class="card-img-top" src="img/shef.jfif" alt="">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">بیل گیتس</h5>
+                                    <p class="card-text">سرآشپز</p>
+                                </div>
+                                <div class="card-footer">
+                                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="image">
+                                    <img class="card-img-top" src="img/shef.jfif" alt="">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">بیل گیتس</h5>
+                                    <p class="card-text">سرآشپز</p>
+                                </div>
+                                <div class="card-footer">
+                                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="image">
+                                    <img class="card-img-top" src="img/shef.jfif" alt="">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">بیل گیتس</h5>
+                                    <p class="card-text">سرآشپز</p>
+                                </div>
+                                <div class="card-footer">
+                                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="image">
+                                    <img class="card-img-top" src="img/shef.jfif" alt="">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">بیل گیتس</h5>
+                                    <p class="card-text">سرآشپز</p>
+                                </div>
+                                <div class="card-footer">
+                                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
+                                </div>
+                            </div> -->
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <img src="img/shef.jfif" alt="Avatar">
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <div class="card-title">
+                                            <h2>بیل گیتس</h2>
+                                            <div class="description">
+                                                <h4>سمت : <span>مدیر رستوران</span></h4>
+                                                <h4>سن: <span>65</span></h4>
+                                                <h4>سابقه: <span>20</span></h4>
+                                            </div>
+                                            <div class="more-description">
+                                                <h4>توضیحات بیشتر:</h4>
+                                                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای
+                                                    متنوع با هدف بهبود ابزارهای کاربردی می باشد.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <img src="img/shef3.jpg" alt="Avatar">
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <div class="card-title">
+                                            <h2>جف بزوس</h2>
+                                            <div class="description">
+                                                <h4>سمت : <span>سرآشپز</span></h4>
+                                                <h4>سن: <span>57</span></h4>
+                                                <h4>سابقه: <span>12</span></h4>
+                                            </div>
+                                            <div class="more-description">
+                                                <h4>توضیحات بیشتر:</h4>
+                                                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای
+                                                    متنوع با هدف بهبود ابزارهای کاربردی می باشد.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <img src="img/shef2.jpg" alt="Avatar">
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <div class="card-title">
+                                            <h2>ایلان ماسک</h2>
+                                            <div class="description">
+                                                <h4>سمت : <span>آشپز</span></h4>
+                                                <h4>سن: <span>50</span></h4>
+                                                <h4>سابقه: <span>10</span></h4>
+                                            </div>
+                                            <div class="more-description">
+                                                <h4>توضیحات بیشتر:</h4>
+                                                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای
+                                                    متنوع با هدف بهبود ابزارهای کاربردی می باشد.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <img src="img/shef4.jpg" alt="Avatar">
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <div class="card-title">
+                                            <h2>استیو جابز</h2>
+                                            <div class="description">
+                                                <h4>سمت : <span>گارسون</span></h4>
+                                                <h4>سن: <span>فوت شده</span></h4>
+                                                <h4>سابقه: <span>8</span></h4>
+                                            </div>
+                                            <div class="more-description">
+                                                <h4>توضیحات بیشتر:</h4>
+                                                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای
+                                                    متنوع با هدف بهبود ابزارهای کاربردی می باشد.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <img src="img/shef5.jpg" alt="Avatar">
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <div class="card-title">
+                                            <h2>مارک زاکربرگ</h2>
+                                            <div class="description">
+                                                <h4>سمت : <span>گارسون</span></h4>
+                                                <h4>سن: <span>37</span></h4>
+                                                <h4>سابقه: <span>8</span></h4>
+                                            </div>
+                                            <div class="more-description">
+                                                <h4>توضیحات بیشتر:</h4>
+                                                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای
+                                                    متنوع با هدف بهبود ابزارهای کاربردی می باشد.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <img src="img/shef6.jpg" alt="Avatar">
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <div class="card-title">
+                                            <h2>رامین جوشنگ</h2>
+                                            <div class="description">
+                                                <h4>سمت : <span>موسس رستوران</span></h4>
+                                                <h4>سن: <span>18</span></h4>
+                                                <h4>سابقه: <span>0</span></h4>
+                                            </div>
+                                            <div class="more-description">
+                                                <h4>توضیحات بیشتر:</h4>
+                                                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای
+                                                    متنوع با هدف بهبود ابزارهای کاربردی می باشد.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </section>
+            <section class="contact-us" id="contact-us">
+                <div class="container">
+                    <div class="row">
+                        <h1 class="title" id="reserve">تماس با ما</h1>
+                        <section class="content">
+                            <p>لطفا نظرات و پیشنهادات خود را با ما در میان بگذارید.</p>
+                            <div class="contact-container">
+                                <form class="contact-form">
+                                    <h2 class="contact-form-title">با ما در ارتباط باشید</h2>
+                                    <div class="name-input">
+                                        <span class="contact-icon" id="contact-Nicon"><i class="fa fa-user"></i></span>
+                                        <input type="text" id="contact-Ninput" placeholder="نام">
+                                    </div>
+                                    <div class="email-input">
+                                        <span class="contact-icon" id="contact-Picon"><i class="fa fa-envelope"></i></span>
+                                        <input type="email" id="contact-Pinput" placeholder="ایمیل">
+                                    </div>
+                                    <textarea name="" id="" cols="30" rows="10" placeholder="نظر شما"></textarea>
+                                    <button class="contact-btn" type="button">ارسال</button>
+                                </form>
+                                <section class="contact-img">
+                                    <img src="img/img-01.png" alt="">
+                                </section>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+        <script src=" js/script.js "></script>
+        <script src=" js/jquery-3.3.1.min.js "></script>
+</body>
+
+
+
+</html>
